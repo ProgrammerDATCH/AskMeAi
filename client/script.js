@@ -52,7 +52,7 @@ function chatStripe(isAi, value, uniqueId)
     <div class="wrapper ${isAi && 'ai'}">
       <div class="chat">
         <div class="profile">
-          <img src="${isAi ? user : 'assets/bot2.png'}" alt="${isAi ? 'bot' : 'user'}" />
+          <img src="${isAi ? 'assets/bot2.png' : user}" alt="${isAi ? 'bot' : 'user'}" />
         </div>
         <div class="message" id=${uniqueId}>${value}</div>
       </div>
