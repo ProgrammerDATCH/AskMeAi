@@ -74,8 +74,11 @@ const handleSubmit = async (e) =>
 
   if (data.get('prompt').toLowerCase().includes('datch')) {
     // Give a response
-    chatContainer.innerHTML += chatStripe(true, "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.");
+    const uniqueId1 = generateUniqueId();
+    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    const messageDiv1 = document.getElementById(uniqueId1);
+    typeText(messageDiv1, "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.");
     form.reset();
     return;
   }
