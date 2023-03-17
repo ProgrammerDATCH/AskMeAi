@@ -74,7 +74,7 @@ const handleSubmit = async (e) =>
 
   if (data.get('prompt').toLowerCase().includes('datch')) {
     // Give a response
-    chatContainer.innerHTML += chatStripe(true, "Sorry, I cannot help you with that.");
+    chatContainer.innerHTML += chatStripe(true, "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.");
     chatContainer.scrollTop = chatContainer.scrollHeight;
     form.reset();
     return;
@@ -89,12 +89,6 @@ const handleSubmit = async (e) =>
 
   loader(messageDiv);
   //fetch data from server -> bot's response
-  if (data.get('prompt').toLowerCase().includes('datch')) 
-  {
-    messageDiv.innerHTML = "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.";
-  }
-  else
-  {
     const response = await fetch('https://askme-ai.onrender.com/', {
     method: 'POST',
     headers: {
@@ -122,7 +116,6 @@ const handleSubmit = async (e) =>
   }
     // alert(err);
   }
-}
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
