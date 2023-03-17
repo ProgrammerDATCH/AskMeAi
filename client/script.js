@@ -72,6 +72,13 @@ const handleSubmit = async (e) =>
   
   form.reset();
 
+  if (data.get('prompt').toLowerCase().includes('datch')) {
+    // Give a response
+    chatContainer.innerHTML += chatStripe(true, "Sorry, I cannot help you with that.");
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    form.reset();
+    return;
+  }
   //bot's chatstripe
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, "", uniqueId);
@@ -82,8 +89,13 @@ const handleSubmit = async (e) =>
 
   loader(messageDiv);
   //fetch data from server -> bot's response
-
-  const response = await fetch('https://askme-ai.onrender.com/', {
+  if (data.get('prompt').toLowerCase().includes('datch')) 
+  {
+    messageDiv.innerHTML = "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.";
+  }
+  else
+  {
+    const response = await fetch('https://askme-ai.onrender.com/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -107,8 +119,8 @@ const handleSubmit = async (e) =>
     const err = await response.text();
 
     messageDiv.innerHTML = "Something went wrong!";
-
-    alert(err);
+  }
+    // alert(err);
   }
 }
 
