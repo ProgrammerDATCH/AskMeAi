@@ -244,7 +244,7 @@ const handleSubmit = async (e) =>
         typeText(messageDiv1, "ntakomisiyo.com \n is the website developed by (my Boss) Programmer DATCH that connect people who wants to buy and those wants to sell without commission,\n especially those dealing with second hand product. \n With Slogan (Gura nta Komisiyo kuko usobanutse)\n ");
         form.reset();
       }, 2000);
-      
+  
       return true;
     }
     if (msgFromUserVar.includes("fuck")) {
@@ -257,7 +257,7 @@ const handleSubmit = async (e) =>
       setTimeout(function() {
         clearInterval(loadInterval);
         messageDiv1.innerHTML = "";
-        typeText(messageDiv1, "My Boss Programmer DATCH, hate abusive speech(gutukana).\n Make sure you be nice in my chat with you!");
+        typeText(messageDiv1, "My Boss Programmer DATCH, hate abusive speech(gutukana).\n Make sure you be nices in my chat with you!");
         form.reset();
       }, 2000);
       
