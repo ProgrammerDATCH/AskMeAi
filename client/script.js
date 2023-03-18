@@ -78,7 +78,37 @@ const handleSubmit = async (e) =>
     chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
     chatContainer.scrollTop = chatContainer.scrollHeight;
     const messageDiv1 = document.getElementById(uniqueId1);
-    typeText(messageDiv1, "Am sorry, Programmer DATCH (my creator) told me not to expose his information anymore. but here are some general information you can get on Him: \n DATCH is a Rwandan young guy who code everything. He is the one who made me! Whatsapp him on +(250) 735177666 to chat with Him.");
+    typeText(messageDiv1, "Am sorry, Programmer DATCH (my Boss) told me not to expose his information anymore. \nBut here are some general information you can get on Him: \n\n DATCH is a Rwandan young guy who code everything. \nHe is the one who made me! \n Whatsapp him on +(250) 735177666 to chat with Him.");
+    form.reset();
+    return;
+  }
+  if (data.get('prompt').toLowerCase() === "hy" || data.get('prompt').toLowerCase() === "hi") {
+    // Give a response
+    const uniqueId1 = generateUniqueId();
+    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    const messageDiv1 = document.getElementById(uniqueId1);
+    typeText(messageDiv1, "Hey, how can I help you?");
+    form.reset();
+    return;
+  }
+  if (data.get('prompt').toLowerCase() === "ok") {
+    // Give a response
+    const uniqueId1 = generateUniqueId();
+    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    const messageDiv1 = document.getElementById(uniqueId1);
+    typeText(messageDiv1, "Okay Thank you!, am here anytime you need me.");
+    form.reset();
+    return;
+  }
+  if (data.get('prompt').toLowerCase() === "why") {
+    // Give a response
+    const uniqueId1 = generateUniqueId();
+    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    const messageDiv1 = document.getElementById(uniqueId1);
+    typeText(messageDiv1, "Give me more information on your question. Even those from previous chat for me to give you appropriate answer!");
     form.reset();
     return;
   }
