@@ -72,46 +72,13 @@ const handleSubmit = async (e) =>
   
   form.reset();
 
-  if (data.get('prompt').toLowerCase().includes('datch')) {
-    // Give a response
-    const uniqueId1 = generateUniqueId();
-    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    const messageDiv1 = document.getElementById(uniqueId1);
-    typeText(messageDiv1, "Am sorry, Programmer DATCH (my Boss) told me not to expose his information anymore. \nBut here are some general information you can get on Him: \n\n DATCH is a Rwandan young guy who code everything. \nHe is the one who made me! \n Whatsapp him on +(250) 735177666 to chat with Him.");
-    form.reset();
+  const msgFromUser = data.get('prompt').toLowerCase();
+  let checkProblemResult = checkProblem(msgFromUser);
+  if(checkProblemResult)
+  {
     return;
   }
-  if (data.get('prompt').toLowerCase() === "hy" || data.get('prompt').toLowerCase() === "hi") {
-    // Give a response
-    const uniqueId1 = generateUniqueId();
-    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    const messageDiv1 = document.getElementById(uniqueId1);
-    typeText(messageDiv1, "Hey, how can I help you?");
-    form.reset();
-    return;
-  }
-  if (data.get('prompt').toLowerCase() === "ok") {
-    // Give a response
-    const uniqueId1 = generateUniqueId();
-    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    const messageDiv1 = document.getElementById(uniqueId1);
-    typeText(messageDiv1, "Okay Thank you!, am here anytime you need me.");
-    form.reset();
-    return;
-  }
-  if (data.get('prompt').toLowerCase() === "why") {
-    // Give a response
-    const uniqueId1 = generateUniqueId();
-    chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    const messageDiv1 = document.getElementById(uniqueId1);
-    typeText(messageDiv1, "Give me more information on your question. Even those from previous chat for me to give you appropriate answer!");
-    form.reset();
-    return;
-  }
+
   //bot's chatstripe
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, "", uniqueId);
@@ -148,6 +115,155 @@ const handleSubmit = async (e) =>
     messageDiv.innerHTML = "Something went wrong!";
   }
     // alert(err);
+  }
+
+  function checkProblem(msgFromUserVar)
+  {
+    if (msgFromUserVar.includes('datch')) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Am sorry, Programmer DATCH (my Boss) told me not to expose his information anymore. \nBut here are some general information you can get on Him: \n\n DATCH is a Rwandan young guy who code everything. \nHe is the one who made me! \n Whatsapp him on +(250) 735177666 to chat with Him.");
+        form.reset();
+      }, 2000);
+
+      return true;
+    }
+    if (msgFromUserVar.trim() === "hy" || msgFromUserVar.trim() === "hi") {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Hi there! How can I help you?");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.trim() === "ok" || msgFromUserVar.trim() === "ok.") {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Okay Thank you!, am here anytime you need me.");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.trim() === "why" || msgFromUserVar.trim() === "why?") {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Give me more information on your question. Even those from previous chat for me to give you appropriate answer!");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.trim() === " " || msgFromUserVar.trim() === "") {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Write Something!");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.trim() === "." || msgFromUserVar.trim() === "?" || msgFromUserVar.trim() === "!") {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Try to give me more information than single symbol.");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.includes("who made you") || msgFromUserVar.trim() === "who made you?" || msgFromUserVar.includes("who created you")) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "I was made by Programmer DATCH.\n He lives in Rwanda\n Chat with him on Whatsapp 0735177666");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.includes("ntakomisiyo") || msgFromUserVar.includes("ntakomisiyo.com")) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "ntakomisiyo.com \n is the website developed by (my Boss) Programmer DATCH that connect people who wants to buy and those wants to sell without commission,\n especially those dealing with second hand product. \n With Slogan (Gura nta Komisiyo kuko usobanutse)\n ");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.includes("fuck")) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "My Boss Programmer DATCH, hate abusive speech(gutukana).\n Make sure you be nice in my chat with you!");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    return false;
   }
 
 form.addEventListener('submit', handleSubmit);
