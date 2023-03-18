@@ -279,6 +279,22 @@ const handleSubmit = async (e) =>
       
       return true;
     }
+    if (msgFromUserVar.includes("what is your name")) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "As a ROBOT I don't have a name. But I wish I could be called DATCH😂");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
     return false;
   }
 
