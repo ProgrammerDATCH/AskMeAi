@@ -247,7 +247,7 @@ const handleSubmit = async (e) =>
   
       return true;
     }
-    if (msgFromUserVar.includes("fuck")) {
+    if (msgFromUserVar.includes("fuck") || msgFromUserVar.includes("gaswere")) {
       // Give a response
       const uniqueId1 = generateUniqueId();
       chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
@@ -258,6 +258,22 @@ const handleSubmit = async (e) =>
         clearInterval(loadInterval);
         messageDiv1.innerHTML = "";
         typeText(messageDiv1, "My Boss Programmer DATCH, hate abusive speech(gutukana).\n Make sure you be nices in my chat with you!");
+        form.reset();
+      }, 2000);
+      
+      return true;
+    }
+    if (msgFromUserVar.includes("who are you") || msgFromUserVar.includes("are you a")) {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "I am Ai(Artificial Intelligent) Robot designed by Programmer DATCH.\n My main purpose it to help everyone with questions\nHe built me using powerful Algorithm to analyse request and give response\n\nFeel free to ask me anything.");
         form.reset();
       }, 2000);
       
