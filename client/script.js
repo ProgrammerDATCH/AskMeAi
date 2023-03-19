@@ -215,7 +215,7 @@ function checkProblem(msgFromUserVar)
       
       return true;
     }
-    if (msgFromUserVar.includes("who made you") || msgFromUserVar.trim() === "who made you?" || msgFromUserVar.includes("who created you")) {
+    if (msgFromUserVar.includes("who made you") || msgFromUserVar.trim() === "who made you?" || msgFromUserVar.includes("who created you") || msgFromUserVar.includes("who is your creator") || msgFromUserVar.includes("who programmed you")) {
       // Give a response
       const uniqueId1 = generateUniqueId();
       chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
