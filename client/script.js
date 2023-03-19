@@ -112,12 +112,12 @@ const handleSubmit = async (e) =>
   {
     const err = await response.text();
 
-    messageDiv.innerHTML = "Something went wrong!";
+    messageDiv.innerHTML = "Something went wrong! Ask again \nIf this continue WhatsApp my developer on +(250) 735177666 to report a problem.";
   }
     // alert(err);
-  }
+}
 
-  function checkProblem(msgFromUserVar)
+function checkProblem(msgFromUserVar)
   {
     if (msgFromUserVar.includes('datch')) {
       // Give a response
@@ -296,12 +296,24 @@ const handleSubmit = async (e) =>
       return true;
     }
     return false;
-  }
+}
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
-  if(e.keyCode === 13)
+  if(e.keyCode === 13 && !e.shiftKey)
   {
     handleSubmit(e);
   }
 })
+form.addEventListener('keydown', function(e) {
+  if (e.keyCode === 13 && e.shiftKey) {
+    console.log("reached");
+    const textarea = e.target;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const value = textarea.value;
+    textarea.value = value.substring(0, start) + '\n' + value.substring(end);
+    textarea.selectionStart = textarea.selectionEnd = start + 1;
+    e.preventDefault();
+  }
+});
