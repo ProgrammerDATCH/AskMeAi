@@ -1,3 +1,4 @@
+//start of DATCH Ai
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
 
@@ -299,12 +300,14 @@ function checkProblem(msgFromUserVar)
 }
 
 form.addEventListener('submit', handleSubmit);
+
 form.addEventListener('keyup', (e) => {
   if(e.keyCode === 13 && !e.shiftKey)
   {
     handleSubmit(e);
   }
 })
+
 form.addEventListener('keydown', function(e) {
   if (e.keyCode === 13 && e.shiftKey) {
     console.log("reached");
@@ -317,3 +320,5 @@ form.addEventListener('keydown', function(e) {
     e.preventDefault();
   }
 });
+
+//end of DATCH Ai

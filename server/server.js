@@ -24,11 +24,10 @@ app.get('/', async (req, res) => {
 app.post('/', async (req, res) => {
     try {
       const prompt = req.body.prompt;
-      const conversationHistory = req.body.conversationHistory || [];
   
       const response = await openai.createCompletion({
         model: 'text-davinci-003',
-        prompt: `${conversationHistory.join('\n')}\nUser: ${prompt}\nAI:`,
+        prompt: `${prompt}`,
         temperature: 0,
         max_tokens: 3000,
         top_p: 1,
@@ -37,11 +36,9 @@ app.post('/', async (req, res) => {
       });
   
       const botResponse = response.data.choices[0].text.trim();
-      conversationHistory.push(`User: ${prompt}\nAI: ${botResponse}`);
-  
+
       res.status(200).send({
         bot: botResponse,
-        conversationHistory,
       });
     } catch (error) {
       console.log(error);

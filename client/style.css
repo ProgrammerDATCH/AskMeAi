@@ -156,8 +156,17 @@ form img {
   font-size: 10px;
 }
 
-.dev a{
+.dev_name{
   font-size: 13px;
   color: #fff;
   text-decoration: none;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.contact_dev a{
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
 }
