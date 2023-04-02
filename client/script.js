@@ -113,8 +113,8 @@ const handleSubmit = async (e) =>
   {
     const err = await response.text();
 
-    // messageDiv.innerHTML = "Something went wrong! Ask again \nIf this continue WhatsApp my developer on +(250) 735177666 to report a problem.";
-    messageDiv.innerHTML = "Sorry, my Boss have detected the problem I have.\n And He is fixing it as soon as possible";
+    messageDiv.innerHTML = "Something went wrong! Ask again \nIf this continue WhatsApp my developer on +(250) 735177666 to report a problem.";
+    // messageDiv.innerHTML = "Sorry, my Boss have detected the problem I have.\n And He is fixing it as soon as possible";
   }
     // alert(err);
 }
