@@ -153,20 +153,28 @@ form img {
   width: 100%;
   color: #fff;
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .dev_name{
-  font-size: 13px;
+  font-size: 11px;
   color: #fff;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 5px;
   margin-left: 3px;
 }
 
 .contact_dev a{
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   color: #fff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 10px;
+}
+
+.download_app a{
+  margin-left: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
 }
