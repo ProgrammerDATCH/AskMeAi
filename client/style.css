@@ -191,7 +191,21 @@ color: white;
   font-size: large;
 }
 .company{
-  font-size: 10px;
+  font-size: 12px;
   font-family: cursive;
   text-align: center;
+}
+.contact_dev2 a{
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
+.header{
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  text-decoration: underline;
 }
