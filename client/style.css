@@ -178,3 +178,20 @@ form img {
   text-decoration: none;
   font-size: 10px;
 }
+
+.temporary{
+margin: 10px;
+margin-top: 20%;
+color: white;
+
+}
+.download_app2 a{
+  margin-left: 5px;
+  color: #fff;
+  font-size: large;
+}
+.company{
+  font-size: 10px;
+  font-family: cursive;
+  text-align: center;
+}
