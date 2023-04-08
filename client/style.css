@@ -180,6 +180,7 @@ form img {
 }
 
 .temporary{
+  width: 100%;
 margin: 10px;
 margin-top: 20%;
 color: white;
@@ -206,6 +207,6 @@ color: white;
   width: 100%;
   color: #fff;
   text-align: center;
-  font-size: 50px;
-  text-decoration: underline;
+  font-size: 30px;
+  /* text-decoration: underline; */
 }
