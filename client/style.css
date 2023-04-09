@@ -180,9 +180,9 @@ form img {
 }
 
 .temporary{
-  width: 100%;
+  width: 90%;
 margin: 10px;
-margin-top: 20%;
+margin-top: 10%;
 color: white;
 
 }
@@ -201,12 +201,15 @@ color: white;
   margin-right: 5px;
   color: #fff;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
 }
 .header{
-  width: 100%;
+  width: 80%;
   color: #fff;
   text-align: center;
   font-size: 30px;
   /* text-decoration: underline; */
+}
+.general_text{
+  width: 90%;
 }
