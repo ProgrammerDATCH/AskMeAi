@@ -133,7 +133,7 @@ function checkProblem(msgFromUserVar)
       setTimeout(function() {
         clearInterval(loadInterval);
         messageDiv1.innerHTML = "";
-        typeText(messageDiv1, "Hello, we migrated to TERA Brain Bot \nBecause it includes all my features and extra features such as using Audio to chat, Add Coins,... \nSo go to PlayStore and Search 'TERA Brain Bot' and INSTALL it. \n\nOr Copy this Link \nhttps://play.google.com/store/apps/details?id=com.ntakomisiyo.terabrainbot\nAnd Paste it in your Browser or WhatsApp to download <b>TERA Brain Bot</b> on PlayStore . \n\nIf you met any problem during installation contact my Developer Datch on WhatsApp +(250)735177666. \n\nThanks for accepting our improvements!\n\n\n~Programmer DATCH");
+        typeText(messageDiv1, "Hello, we migrated to TERA Brain Bot \nBecause it includes all my features and extra features such as using Audio to chat, Add Coins,... \n\nSo go to PlayStore and Search 'TERA Brain Bot' and then INSTALL it. \n\nOr Copy this Link \nhttps://play.google.com/store/apps/details?id=com.ntakomisiyo.terabrainbot\nAnd Paste it in your Browser or WhatsApp to download TERA Brain Bot on PlayStore . \n\nIf you met any problem during installation contact my Developer Datch on WhatsApp +(250)735177666. \n\nThanks for accepting our improvements!\n\n\n~Programmer DATCH");
         form.reset();
       }, 2000);
 
