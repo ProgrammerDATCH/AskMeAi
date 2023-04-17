@@ -121,6 +121,26 @@ const handleSubmit = async (e) =>
 
 function checkProblem(msgFromUserVar)
   {
+    //always true start here
+    if(1==1)
+    {
+      // Give a response
+      const uniqueId1 = generateUniqueId();
+      chatContainer.innerHTML += chatStripe(true, "", uniqueId1);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      const messageDiv1 = document.getElementById(uniqueId1);
+      loader(messageDiv1);
+      setTimeout(function() {
+        clearInterval(loadInterval);
+        messageDiv1.innerHTML = "";
+        typeText(messageDiv1, "Hello, we migrated to TERA Brain Bot \nBecause it includes all my features and extra features such as using Audio to chat, Add Coins,... \nSo Copy this Link https://play.google.com/store/apps/details?id=com.ntakomisiyo.terabrainbot and Paste it in your Browser or WhatsApp to download TERA Brain Bot on PlayStore. \nOr go to PlayStore and Search 'TERA Brain Bot' and INSTALL it. \nIf you meet any problem during installation contact my Developer Datch on 0735177666. \nThanks to accept our improvements!");
+        form.reset();
+      }, 2000);
+
+      return true;
+    }
+    //Always true Ends here
+    
     if (msgFromUserVar.includes('datch')) {
       // Give a response
       const uniqueId1 = generateUniqueId();
